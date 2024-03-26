@@ -1,0 +1,17 @@
+div#error-page {
+  background-color: var(--colors-3-base);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#error-page img {
+  width: 25vw;
+}
+
+div#error-page div.container {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,69 @@
+@import url('./assets/fonts/Poppins/font-face.css');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --colors-1-lighter: #D3C0D7;
+  --colors-1-light: #C498CD;
+  --colors-1-base: #AD00CF;
+  --colors-1-dark: #690081;
+  --colors-1-darker: #020003;
+  --colors-2-base: #51B59F;
+  --colors-3-base: #FFD445;
+  --colors-4-base: #FF5757;
+  --colors-5-base: #F288CA;
+  --colors-6-base: #52B0FF;
+
+  --colors-text-on-color: #FFFFFF;
+
+  --transition-time: .3s;
+  --box-shadow: #26262680 1.95px 1.95px 2.6px;
+
+  --nav-height: 10vh;
+  --footer-height: 10vh;
+  --main-height: calc(100vh - var(--nav-height) - var(--footer-height));
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.25rem solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+  background-color: var(--colors-1-base);
+}
+
+a {
+  transition: color var(--transition-time);
+}
+
+a:link {
+  color: var(--colors-1-base);
+}
+
+a:visited {
+  color: var(--colors-1-darker);
+}
+
+a:hover {
+  color: var(--colors-1-dark);
+}
+
+a:active {
+  color: var(--colors-1-dark);
+}
+
+div#app-page {
+  padding-top: var(--nav-height);
+}
+
+div#app-page>div#main {
+  min-height: var(--main-height);
+}
