@@ -8,42 +8,47 @@ div#home-page {
 div#home-page section {
   width: 100%;
   height: 100%;
+  background-color: #FFFFFF;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   font-size: 2rem;
-  filter: brightness(0.5);
+  /* filter: brightness(0.7); */
   cursor: pointer;
   overflow: hidden;
   transition: all var(--transition-time);
 }
 
-div#home-page section p {
-  padding: 3rem;
-  position: absolute;
-  bottom: -100%;
+div#home-page section div.info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  transition: background-color var(--transition-time);
+}
+
+div#home-page section div.info p {
+  padding-bottom: 45%;
+  font-weight: 500;
+  transform: translateY(calc(100% + 3rem));
+  transition: transform var(--transition-time);
 }
 
 div#home-page section:hover {
   filter: brightness(1);
 }
 
-div#home-page section:hover p {
-  bottom: 0%;
+div#home-page section:hover div.info {
+  background-color: #FFFFFFCC;
 }
 
-div#home-page section#instituto {
-  background-color: var(--colors-6-base);
-}
-
-div#home-page section#exames {
-  background-color: var(--colors-2-base);
-}
-
-div#home-page section#area-kids {
-  background-color: var(--colors-3-base);
+div#home-page section:hover div.info p {
+  transform: translateY(0);
 }
 
 div#home-page a,

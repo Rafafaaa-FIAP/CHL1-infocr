@@ -13,6 +13,12 @@ nav {
   z-index: 1;
 }
 
+nav a.linkLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 nav img#logo {
   width: 7rem;
   border-radius: 100%;
