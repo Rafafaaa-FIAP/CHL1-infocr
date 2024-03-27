@@ -1,5 +1,5 @@
 nav {
-  width: 100%;
+  width: 100vw;
   height: var(--nav-height);
   background-color: var(--colors-1-base);
   padding: 0 3%;
@@ -20,7 +20,7 @@ nav a.linkLogo {
 }
 
 nav img#logo {
-  width: 7rem;
+  height: var(--nav-height);
   border-radius: 100%;
   cursor: pointer;
   transition: transform var(--transition-time);
@@ -31,7 +31,7 @@ nav img#logo:hover {
 }
 
 img#area-kids {
-  width: 7rem;
+  height: var(--nav-height);
   transition: transform var(--transition-time);
 }
 
@@ -69,4 +69,11 @@ nav a:hover,
 nav a:active {
   color: var(--colors-text-on-color);
   text-decoration: none;
+}
+
+
+@media (max-width: 600px) {
+  nav {
+    
+  }
 }

@@ -12,13 +12,25 @@ div#institute-page div.container {
 div#institute-page div.container div {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 div#institute-page div.container p {
   max-width: 50vw;
 }
 
-div#institute-page div.container img {
+div#institute-page div.container img:not(img#google-maps) {
   width: 22.5vw;
+}
+
+div#institute-page img#google-maps {
+  width: 2.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+div#institute-page span.flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
