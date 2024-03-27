@@ -1,1 +1,24 @@
-div#institute-page {}
+div#institute-page {
+  background-size: cover;
+}
+
+div#institute-page div.container {
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+div#institute-page div.container div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+div#institute-page div.container p {
+  max-width: 50vw;
+}
+
+div#institute-page div.container img {
+  width: 22.5vw;
+}
