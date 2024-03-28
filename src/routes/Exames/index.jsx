@@ -1,8 +1,10 @@
+import TextField from '../../components/TextField'
+
 function Exames() {
   return (
-    <>
-      <div>Exames</div>
-    </>
+    <div className=''>
+      <TextField id="test" placeholder="Teste" width="10rem" />
+    </div>
   )
 }
 
