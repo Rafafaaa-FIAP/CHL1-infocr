@@ -59,8 +59,8 @@ function Instituto() {
           <img src={hiFive} alt="Hi Five" />
         </div>
         <div className='container-right'>
-          <h1>Lorem</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, quas.</p>
+          <h1>Mais Informações</h1>
+          <p>Acesse o site oficial clicando <a href='https://icr.usp.br/' target='_blank'>aqui</a></p>
         </div>
       </div>
     </div>
