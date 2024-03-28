@@ -17,6 +17,7 @@ div#institute-page div.container div {
 
 div#institute-page div.container p {
   max-width: 50vw;
+  text-align: justify;
 }
 
 div#institute-page div.container img:not(img#google-maps) {
@@ -33,4 +34,48 @@ div#institute-page span.flex {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  div#institute-page div.container:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  div#institute-page div.container:nth-child(even) {
+    flex-direction: column;
+  }
+
+  div#institute-page div.container p {
+    max-width: unset;
+  }
+
+  div#institute-page div.container img:not(img#google-maps) {
+    width: 50vw;
+  }
+
+  div#institute-page div#other {
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  div#institute-page div.container:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  div#institute-page div.container:nth-child(even) {
+    flex-direction: column;
+  }
+
+  div#institute-page div.container p {
+    max-width: unset;
+  }
+
+  div#institute-page div.container img:not(img#google-maps) {
+    width: 50vw;
+  }
+
+  div#institute-page div#other {
+    padding-bottom: 1rem;
+  }
 }

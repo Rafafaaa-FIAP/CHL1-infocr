@@ -60,10 +60,20 @@ a:active {
   color: var(--colors-1-dark);
 }
 
-div#app-page {
-  padding-top: var(--nav-height);
-}
-
 div#app-page>div#main {
   min-height: var(--main-height);
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  :root {
+    --nav-height: 7vh;
+    --footer-height: 20vh;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --nav-height: 7vh;
+    --footer-height: 6vh;
+  }
 }

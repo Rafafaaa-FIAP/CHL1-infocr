@@ -1,5 +1,5 @@
 nav {
-  width: 100vw;
+  width: 100%;
   height: var(--nav-height);
   background-color: var(--colors-1-base);
   padding: 0 3%;
@@ -7,13 +7,13 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 1;
 }
 
-nav a.linkLogo {
+nav a.linkImage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ div#nav-menu ul {
 div#nav-menu ul li {
   cursor: pointer;
   font-weight: 500;
-  border-bottom: 2px solid transparent;
+  border-bottom: 0.15rem solid transparent;
   transition: border-color var(--transition-time);
 }
 
@@ -71,9 +71,17 @@ nav a:active {
   text-decoration: none;
 }
 
-
 @media (max-width: 600px) {
   nav {
-    
+    width: 100vw;
+    padding: 0;
+  }
+
+  div#nav-menu {
+    gap: 1rem;
+  }
+
+  div#nav-menu ul {
+    gap: 1rem;
   }
 }

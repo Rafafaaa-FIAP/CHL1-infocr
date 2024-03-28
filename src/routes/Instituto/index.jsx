@@ -1,6 +1,7 @@
 import './styles.css'
 
 import background from '../../assets/images/background.png'
+import backgroundMobile from '../../assets/images/background-mobile.png'
 import family from '../../assets/images/family.svg'
 import contact from '../../assets/images/contact.svg'
 import address from '../../assets/images/address.svg'
@@ -9,7 +10,7 @@ import googleMaps from '../../assets/images/google-maps.png'
 
 function Instituto() {
   return (
-    <div id="institute-page" style={{ backgroundImage: `url(${background})` }}>
+    <div id="institute-page" style={{ backgroundImage: `url(${window.innerWidth > 600 ? background : backgroundMobile})` }}>
       <div id="about" className='container'>
         <div className='container-left'>
           <h1>Sobre o instituto</h1>
