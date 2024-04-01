@@ -27,7 +27,7 @@ function Exames() {
     <div id='exams-page'>
       <h1>Exames</h1>
       <div className='find'>
-        <TextField id="find-exam" placeholder="Localizar Exame" big="true" onChange={handleFindExam} />
+        <TextField id="find-exam" placeholder="Localizar Exame" onChange={handleFindExam} big />
       </div>
       <div id="exams-lines">
         {

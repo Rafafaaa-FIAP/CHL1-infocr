@@ -2,7 +2,7 @@ import './styles.css';
 
 function TextField(props) {
   return (
-    <div className={"text-field " + (props.big ? "big" : "")} style={{ width: props.width }}>
+    <div className={"text-field " + (!!props.big ? "big" : "")} style={{ width: props.width }}>
       <fieldset>
         <input
           required
