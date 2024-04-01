@@ -1,0 +1,51 @@
+div.exam {
+  width: 100%;
+  height: min-content;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: background-color var(--transition-time);
+}
+
+div.exam:hover {
+  background-color: var(--colors-1-lighter);
+}
+
+div.exam div.exam-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+div.exam.shown div.exam-header {
+  border-bottom: 0;
+}
+
+div.exam div.exam-header h2,
+div.exam div.exam-header i {
+  font-size: 2rem;
+  user-select: none;
+}
+
+div.exam div.exam-header i {
+  transition: transform var(--transition-time);
+}
+
+div.exam.shown div.exam-header i {
+  transform: rotate(90deg);
+}
+
+div.exam div.infos {
+  max-height: 0;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: padding var(--transition-time), max-height var(--transition-time);
+}
+
+div.exam.shown div.infos {
+  max-height: 20rem;
+  padding: 1rem 3rem;
+}

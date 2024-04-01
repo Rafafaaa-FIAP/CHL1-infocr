@@ -91,6 +91,10 @@ div#home-page a:active {
     font-size: 1.5rem;
   }
 
+  div#home-page section:hover div.info {
+    background-color: unset;
+  }
+
   div#home-page section div.info p {
     padding-bottom: 0;
     transform: translateY(0);
@@ -120,6 +124,10 @@ div#home-page a:active {
 
   div#home-page h2 {
     font-size: 1.5rem;
+  }
+
+  div#home-page section:hover div.info {
+    background-color: unset;
   }
 
   div#home-page section div.info p {

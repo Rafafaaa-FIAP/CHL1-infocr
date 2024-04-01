@@ -2,13 +2,21 @@ import './styles.css';
 
 function TextField(props) {
   return (
-    <div class="text-field" style={{ width: props.width }}>
+    <div className={"text-field " + (props.big ? "big" : "")} style={{ width: props.width }}>
       <fieldset>
-        <input type="text" id={props.id} name={props.id} placeholder={props.placeholder} required />
+        <input
+          required
+          type="text"
+          id={props.id}
+          name={props.id}
+          placeholder={props.placeholder}
+          style={{ width: props.width }}
+          onChange={!!props.onChange ? props.onChange : (() => { })}
+        />
         <legend>
           <span>{props.placeholder}</span>
         </legend>
-        <label for={props.id} class="placeholder">{props.placeholder}</label>
+        <label htmlFor={props.id} className="placeholder">{props.placeholder}</label>
       </fieldset>
     </div>
   )
