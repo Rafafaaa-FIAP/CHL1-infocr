@@ -1,6 +1,7 @@
 div.exam {
   width: 100%;
   height: min-content;
+  background-color: var(--colors-1-light);
   padding: 0.5rem;
   border-radius: 1rem;
   overflow: hidden;
@@ -8,7 +9,7 @@ div.exam {
 }
 
 div.exam:hover {
-  background-color: var(--colors-1-lighter);
+  background-color: #FFFFFF;
 }
 
 div.exam div.exam-header {
@@ -16,10 +17,6 @@ div.exam div.exam-header {
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-}
-
-div.exam.shown div.exam-header {
-  border-bottom: 0;
 }
 
 div.exam div.exam-header h2,
@@ -32,20 +29,73 @@ div.exam div.exam-header i {
   transition: transform var(--transition-time);
 }
 
-div.exam.shown div.exam-header i {
-  transform: rotate(90deg);
-}
-
 div.exam div.infos {
   max-height: 0;
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  text-align: justify;
   overflow: hidden;
   transition: padding var(--transition-time), max-height var(--transition-time);
 }
 
+div.exam div.infos div.infos-item ul {
+  padding-left: 2rem;
+}
+
+div.exam.shown div.exam-header {
+  border-bottom: 0;
+}
+
+div.exam.shown div.exam-header i {
+  transform: rotate(90deg);
+}
+
 div.exam.shown div.infos {
-  max-height: 20rem;
+  max-height: 50rem;
   padding: 1rem 3rem;
+}
+
+div.exam a {
+  width: fit-content;
+  background-color: var(--colors-3-base);
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: var(--box-shadow);
+}
+
+div.exam a:link {
+  color: var(--colors-1-darker);
+}
+
+div.exam a:visited {
+  color: var(--colors-1-darker);
+}
+
+div.exam a:hover {
+  color: var(--colors-1-darker);
+}
+
+div.exam a:active {
+  color: var(--colors-1-darker);
+}
+
+@media (max-width: 600px) {
+
+  div.exam div.exam-header h2,
+  div.exam div.exam-header i {
+    font-size: 1.5rem;
+  }
+
+  div.exam div.infos {
+    padding: 0 1rem;
+  }
+
+  div.exam.shown:not(.disabled) div.infos {
+    max-height: 100rem;
+    padding: 1rem;
+  }
 }

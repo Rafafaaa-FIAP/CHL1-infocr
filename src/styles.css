@@ -62,6 +62,7 @@ a:active {
 
 div#app-page>div#main {
   min-height: var(--main-height);
+  background-color: var(--colors-3-base);
 }
 
 @media (min-width: 601px) and (max-width: 900px) {

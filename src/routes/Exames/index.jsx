@@ -5,19 +5,10 @@ import './styles.css'
 import TextField from '../../components/TextField'
 import Exam from '../../components/Exam'
 
-function Exames() {
-  const listExams = [
-    {
-      title: 'Hemograma',
-      about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, expedita.'
-    },
-    {
-      title: 'Raio X',
-      about: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, explicabo.'
-    }
-  ];
+import listExams from '../../data/exams'
 
-  const [examsFiltered, setExamsFiltered] = useState(listExams);
+function Exames() {
+  const [examsFiltered, setExamsFiltered] = useState(listExams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)));
 
   function handleFindExam(event) {
     setExamsFiltered(listExams.filter(e => e.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase())));
@@ -35,10 +26,15 @@ function Exames() {
             ? <h2>Nenhum exame localizado</h2>
             : examsFiltered.map((e, i) => {
               return (
-                <Exam key={i} title={e.title} about={e.about} />
+                <Exam key={i} title={e.title} about={e.about} preparations={e.preparations} cantDo={e.cantDo} />
               )
             })
         }
+      </div>
+      <div id="important-infos">
+        <h3>Importante</h3>
+        <p>As instruções acima são gerais e podem variar de acordo com o tipo de exame e o local onde ele será realizado.</p>
+        <p>Se você tiver dúvidas sobre o preparo para o exame, entre em contato com a clínica de exames.</p>
       </div>
     </div>
   )
