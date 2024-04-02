@@ -25,7 +25,7 @@
   --box-shadow: #26262680 1.95px 1.95px 2.6px;
 
   --nav-height: 10vh;
-  --footer-height: 7vh;
+  --footer-height: 10vh;
   --main-height: calc(100vh - var(--nav-height) - var(--footer-height));
 }
 
@@ -63,18 +63,23 @@ a:active {
 div#app-page>div#main {
   min-height: var(--main-height);
   background-color: var(--colors-3-base);
+  overflow: hidden;
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --footer-height: 7vh;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
   :root {
-    --nav-height: 7vh;
     --footer-height: 20vh;
   }
 }
 
 @media (max-width: 600px) {
   :root {
-    --nav-height: 7vh;
     --footer-height: 6vh;
   }
 }

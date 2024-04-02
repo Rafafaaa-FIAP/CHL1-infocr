@@ -1,9 +1,13 @@
 div#area-kids-page {
   width: 100%;
+  min-height: var(--main-height);
   padding: 1rem 5rem 5rem 5rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+
+  --video-w: 560px;
+  --video-h: calc((var(--video-w) * 9) / 16);
 }
 
 div#area-kids-page div.header {
@@ -62,6 +66,11 @@ div#area-kids-page div#exam-infos div.texts ul {
   font-size: 1.2rem;
 }
 
+div#area-kids-page div#exam-infos iframe {
+  width: var(--video-w);
+  height: var(--video-h);
+}
+
 div#area-kids-page div#exams-lines {
   width: 90vw;
   display: flex;
@@ -93,4 +102,74 @@ div#area-kids-page a:hover {
 
 div#area-kids-page a:active {
   color: #FFFFFF;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  div#area-kids-page {
+    padding: 1rem;
+
+    --video-w: 688px;
+  }
+
+  div#area-kids-page div.header {
+    flex-direction: column;
+  }
+
+  div#area-kids-page div#general-infos {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  div#area-kids-page div#exam-infos {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  div#area-kids-page div#exam-infos div.texts {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+
+  div#area-kids-page div#exam-infos div.texts ul {
+    padding: 0 1rem 0 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  div#area-kids-page {
+    padding: 1rem;
+
+    --video-w: 100%;
+  }
+
+  div#area-kids-page div.header {
+    flex-direction: column;
+  }
+
+  div#area-kids-page div#general-infos {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  div#area-kids-page div#exam-infos {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  div#area-kids-page div#exam-infos div.texts {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  div#area-kids-page div#exam-infos div.texts h2 {
+    font-size: 1.5rem;
+  }
+
+  div#area-kids-page div#exam-infos div.texts ul {
+    padding: 0 1rem 0 3rem;
+    font-size: 1rem;
+  }
 }
