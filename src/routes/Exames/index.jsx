@@ -35,7 +35,7 @@ function Exames() {
       <div id="important-infos">
         <h3>Importante</h3>
         <p>As instruções acima são gerais e podem variar de acordo com o tipo de exame e o local onde ele será realizado.</p>
-        <p>Se você tiver dúvidas sobre o preparo para o exame, entre em <HashLink to="/Instituto/#contact">contato</HashLink> o instituto.</p>
+        <p>Se você tiver dúvidas sobre o preparo para o exame, entre em <HashLink to="/Instituto/#contact">contato</HashLink> com o instituto.</p>
       </div>
     </div>
   )
