@@ -31,10 +31,10 @@ function Instituto() {
             <b>ICr Instituto da Criança e do Adolescente</b>
             <p>(11) 2661-8500</p>
             <b>Marcação de consultas – de 2ª a 6ª feira</b>
-            <p>ICr – (11) 2661-8635, das 7:00 às 16:00</p>
-            <p>ITACI – (11) 2661-8962 ou (11) 2661-8963, das 14:00 às 16:00</p>
+            <p>ICr – (11) 2661-8635, das 7h às 16h</p>
+            <p>ITACI – (11) 2661-8962 ou (11) 2661-8963, das 14h às 16h</p>
             <b>Agendamento de exames – de 2ª a 6ª feira</b>
-            <p>(11) 2661-8548 ou (11) 2661-8670 ou pessoalmente no 2º andar do ICr – das 11:00 às 15:00</p>
+            <p>(11) 2661-8548 ou (11) 2661-8670 ou pessoalmente no 2º andar do ICr – das 11h às 15h</p>
           </span>
         </div>
       </div>
@@ -47,7 +47,7 @@ function Instituto() {
             </a>
             <h1>Endereço</h1>
           </span>
-          <p>Av. Dr. Enéas Carvalho de Aguiar, 647 - Cerqueira César, São Paulo - SP, 05403-000</p>
+          <p>Av. Dr. Enéas Carvalho de Aguiar, 647 - Cerqueira César, São Paulo - SP, CEP 05403-000</p>
         </div>
         <div className='container-right'>
           <img src={address} alt="Endereço" />
