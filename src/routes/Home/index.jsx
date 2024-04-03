@@ -22,7 +22,7 @@ function Home() {
           <h2>Sobre Exames</h2>
           <img src={exams} alt='Exames' />
           <div className='info'>
-            <p>Saiba como funciona, quais os preparativos e para quê serve um exame!</p>
+            <p>Saiba como funcionam, para que servem e os preparativos para realização dos exames!</p>
           </div>
         </section>
       </Link>
@@ -31,7 +31,7 @@ function Home() {
           <h2>Área Kids</h2>
           <img src={kids} alt='Crianças' />
           <div className='info'>
-            <p>Inclua o paciente no processo, diminuindo a ansiedade e medo dele!</p>
+            <p>Diga adeus à ansiedade e ao medo, a inclusão do paciente é o segredo!</p>
           </div>
         </section>
       </Link>

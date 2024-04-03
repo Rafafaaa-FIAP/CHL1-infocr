@@ -10,11 +10,11 @@ import googleMaps from '../../assets/images/google-maps.png'
 
 function Instituto() {
   return (
-    <div id="institute-page" style={{ backgroundImage: `url(${window.innerWidth > 600 ? background : backgroundMobile})` }}>
+    <div id="institute-page" style={{ backgroundImage: `url(${window.innerWidth > 900 ? background : backgroundMobile})` }}>
       <div id="about" className='container'>
         <div className='container-left'>
           <h1>Sobre o instituto</h1>
-          <p>o Instituto da Criança do Hospital das Clínicas é considerado centro de referência nacional em saúde da criança e atende pacientes do Sistema Único de Saúde e de operadoras de planos de saúde (Saúde Suplementar).</p>
+          <p>O Instituto da Criança do Hospital das Clínicas é considerado centro de referência nacional em saúde da criança, atendendo pacientes do Sistema Único de Saúde e de operadoras de planos de saúde (Saúde Suplementar).</p>
         </div>
         <div className='container-right'>
           <img src={family} alt="Família" />

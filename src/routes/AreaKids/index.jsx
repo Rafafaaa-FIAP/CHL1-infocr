@@ -41,28 +41,31 @@ function AreaKids() {
       {
         !!selectedExam
           ?
-          <div id="exam-infos">
-            <div className='texts'>
-              <h2>O que é {selectedExam.title}?</h2>
-              <ul>
-                {
-                  selectedExam.ludicInfos.map((e, i) => {
-                    return (
-                      <li key={i}>{e}</li>
-                    )
-                  })
-                }
-              </ul>
+          <>
+            <div id="exam-infos">
+              <div className='texts'>
+                <h2>O que é {selectedExam.title}?</h2>
+                <ul>
+                  {
+                    selectedExam.ludicInfos.map((e, i) => {
+                      return (
+                        <li key={i}>{e}</li>
+                      )
+                    })
+                  }
+                </ul>
+              </div>
+              <iframe
+                src="https://www.youtube.com/embed/infocr"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                title="Vídeo YouTube"
+                allowFullScreen
+              />
             </div>
-            <iframe
-              src="https://www.youtube.com/embed/infocr"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              title="Vídeo YouTube"
-              allowFullScreen
-            />
-          </div>
+            <Link to="/Exames">Selecione outro exame</Link>
+          </>
           :
-          <Link to="/Exames">Selecione um Exame</Link>
+          <Link to="/Exames">Selecione um exame</Link>
       }
     </div>
   )

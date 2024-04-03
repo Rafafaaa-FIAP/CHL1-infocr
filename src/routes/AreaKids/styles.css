@@ -45,7 +45,7 @@ div#area-kids-page div#exam-infos {
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 div#area-kids-page div#exam-infos div.texts {
@@ -102,6 +102,16 @@ div#area-kids-page a:hover {
 
 div#area-kids-page a:active {
   color: #FFFFFF;
+}
+
+@media (min-width: 900px) and (max-width: 1920px) {
+  div#area-kids-page {
+    padding: 2.5rem;
+  }
+
+  div#area-kids-page div#exam-infos {
+    gap: 2rem;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
