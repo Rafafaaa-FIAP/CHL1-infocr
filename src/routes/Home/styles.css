@@ -23,6 +23,10 @@ div#home-page section {
   transition: all var(--transition-time);
 }
 
+div#home-page section h2 {
+  font-size: 2.5rem;
+}
+
 div#home-page section div.info {
   width: 100%;
   height: 100%;
