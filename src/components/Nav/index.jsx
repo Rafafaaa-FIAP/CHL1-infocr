@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.scss'
 
 import logo from '../../assets/images/logo.png'
 import areaKids from '../../assets/images/area-kids.png'

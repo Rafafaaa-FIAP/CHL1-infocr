@@ -7,41 +7,37 @@ div#footer {
   font-weight: 500;
   text-align: center;
   overflow: hidden;
-}
 
-div#footer ul {
-  display: flex;
-  justify-content: space-evenly;
-}
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-@media (min-width: 601px) and (max-width: 900px) {
-  div#footer {
+  @media (min-width: 601px) and (max-width: 900px) {
     height: var(--footer-height);
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding-left: 1rem;
+    }
   }
 
-  div#footer ul {
-    display: flex;
-    flex-direction: column;
-    padding-left: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  div#footer {
+  @media (max-width: 600px) {
     height: unset;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
 
-  div#footer ul {
-    display: flex;
-    flex-direction: column;
-    padding-left: 1rem;
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding-left: 1rem;
+    }
   }
 }

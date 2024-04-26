@@ -82,11 +82,8 @@ div.exam {
       color: var(--colors-1-darker);
     }
   }
-}
 
-@media (max-width: 600px) {
-
-  div.exam {
+  @media (max-width: 600px) {
     div.exam-header {
       h2, i {
         font-size: 1.5rem;
