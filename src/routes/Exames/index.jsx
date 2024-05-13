@@ -20,7 +20,6 @@ function Exames() {
 
   return (
     <div id='exams-page'>
-      <button onClick={() => { getExams2(); }}></button>
       <h1>Exames</h1>
       <div className='find'>
         <TextField id="find-exam" placeholder="Localizar Exame" onChange={handleFindExam} big />
