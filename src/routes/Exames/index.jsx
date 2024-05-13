@@ -1,22 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 
-import './styles.css'
+import './styles.scss'
 
 import TextField from '../../components/TextField'
 import Exam from '../../components/Exam'
 
 import listExams from '../../data/exams'
+import { getExams, getExams2 } from '../../hooks/useExams'
 
 function Exames() {
+  //const exams = getExams2().then((value) => { return value});
+
   const [examsFiltered, setExamsFiltered] = useState(listExams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)));
 
   function handleFindExam(event) {
-    setExamsFiltered(listExams.filter(e => e.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase())));
+    setExamsFiltered(listExams.length === 0 ? [] : listExams.filter(e => e.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase())));
   }
 
   return (
     <div id='exams-page'>
+      <button onClick={() => { getExams2(); }}></button>
       <h1>Exames</h1>
       <div className='find'>
         <TextField id="find-exam" placeholder="Localizar Exame" onChange={handleFindExam} big />

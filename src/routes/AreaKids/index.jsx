@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import './styles.css'
+import './styles.scss'
 
 import listExams from '../../data/exams'
 

@@ -13,6 +13,15 @@ div#footer {
     justify-content: space-evenly;
   }
 
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: var(--colors-6-base);
+    text-decoration: none;
+  }
+
   @media (min-width: 601px) and (max-width: 900px) {
     height: var(--footer-height);
     text-align: left;

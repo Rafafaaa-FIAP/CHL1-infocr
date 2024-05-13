@@ -1,0 +1,14 @@
+button.button-default {
+  background-color: var(--colors-1-base);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--colors-text-on-color);
+  cursor: pointer;
+  transition: all var(--transition-time);
+
+  &:hover {
+    background-color: var(--colors-1-dark);
+  }
+}

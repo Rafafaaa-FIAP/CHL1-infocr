@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 function Footer() {
   return (
     <div id="footer">
-      <p>@2024 - Todos os direitos reservados</p>
+      <p>@2024 - Todos os direitos reservados • <Link to="/Admin">Administração</Link></p>
 
       <ul>
         <li>RM552980 Danilo Vieira</li>

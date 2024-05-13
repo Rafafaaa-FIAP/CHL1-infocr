@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.scss'
 
 import background from '../../assets/images/background.png'
 import backgroundMobile from '../../assets/images/background-mobile.png'

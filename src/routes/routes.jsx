@@ -6,6 +6,7 @@ import Home from './Home'
 import Instituto from './Instituto'
 import Exames from './Exames'
 import AreaKids from './AreaKids'
+import Admin from './Admin'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
       { path: '/AreaKids', element: <AreaKids /> },
       { path: '/AreaKids/:exam', element: <AreaKids /> },
     ]
-  }
+  },
+  { path: '/Admin', element: <Admin /> },
 ])
 
 

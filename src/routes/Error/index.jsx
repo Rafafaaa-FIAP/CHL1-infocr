@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.scss'
 
 import error from '../../assets/images/error-404.svg'
 import { Link } from 'react-router-dom'

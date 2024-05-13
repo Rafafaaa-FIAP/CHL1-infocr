@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './styles.css'
+import './styles.scss'
 
 import institute from '../../assets/images/institute.svg'
 import exams from '../../assets/images/exams.svg'
