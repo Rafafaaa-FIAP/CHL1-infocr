@@ -6,16 +6,32 @@ import './styles.scss'
 import TextField from '../../components/TextField'
 import Exam from '../../components/Exam'
 
-import listExams from '../../data/exams'
-import { getExams, getExams2 } from '../../hooks/useExams'
+//import listExams from '../../data/exams'
+import { getExams } from '../../hooks/useExams'
 
 function Exames() {
-  //const exams = getExams2().then((value) => { return value});
+  const [listExams, setListExams] = useState([]);
+  const [examsFiltered, setExamsFiltered] = useState([]);
 
-  const [examsFiltered, setExamsFiltered] = useState(listExams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)));
+  useEffect(() => {
+    getExams().then((res)=> {
+      console.log(res);
+  
+      const exams = [];
+      Object.keys(res).forEach(id => {
+        exams.push(res[id]);
+      });
+      console.log(exams);
+  
+      setListExams(exams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)));
+      setExamsFiltered(exams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)));
+  
+      return;
+    })
+  }, [])
 
   function handleFindExam(event) {
-    setExamsFiltered(listExams.length === 0 ? [] : listExams.filter(e => e.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase())));
+    setExamsFiltered(listExams.filter(e => e.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase())));
   }
 
   return (
