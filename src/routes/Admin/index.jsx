@@ -91,7 +91,10 @@ function Admin() {
             <Link to='/'>Voltar para o site</Link>
           </div>
         ) : (
-          <h1>logado aparecer exames</h1>
+          <div>
+            <h1>logado aparecer exames</h1>
+            <ButtonDefault text="Sair" onClick={handleLogOut} />
+          </div>
         )
       }
     </div>
