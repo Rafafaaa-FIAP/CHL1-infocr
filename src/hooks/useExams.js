@@ -1,25 +1,20 @@
-import { useEffect, useState } from 'react';
-import { database, ref, onValue, get, set, off, push, getDatabase, child } from '../services/firebase';
-import { query, orderByChild } from 'firebase/database';
+import { refExams, get, query, push, getAuth, signInWithEmailAndPassword, signOut } from '../services/firebase';
 
 export function getExams() {
-  const dbRef = ref(getDatabase(), 'exams/');
-  return get(query(dbRef, orderByChild('title'))).then((snapshot) => {
+  return get(query(refExams)).then((snapshot) => {
     if (snapshot.exists()) {
       return(snapshot.val());
     } else {
       return [];
     }
   }).catch((error) => {
-    console.log(error);
+    console.error(error);
     return [];
   });
 }
 
-export function postExams() {
-  console.log('teste');
-  const dbRef = ref(getDatabase(), 'exams/');
-  push(dbRef, {
+export function createExam() {
+  push(refExams, {
     "about": "aaaaaaaaaaaaaaaaaaaaaaaaaa",
     "cantDo": [
       "c",
@@ -40,3 +35,29 @@ export function postExams() {
     "videoLink": "teste"
   });
 }
+
+export function checkIsSigned() {
+  return getAuth().currentUser !== null;
+}
+
+export function logIn(email, password) {
+  const auth = getAuth();
+  return signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      return userCredential.user;
+    })
+    .catch((error) => {
+      console.error(error);
+      return null;
+    });
+}
+
+export function logOut() {
+  const auth = getAuth();
+  return signOut(auth).then(() => {
+    return true;
+  }).catch((error) => {
+    console.error(error);
+    return false;
+  });
+}
+

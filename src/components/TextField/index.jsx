@@ -6,7 +6,7 @@ function TextField(props) {
       <fieldset>
         <input
           required
-          type="text"
+          type={!!props.type ? props.type : "text"}
           id={props.id}
           name={props.id}
           placeholder={props.placeholder}

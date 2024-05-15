@@ -3,13 +3,23 @@ import { Link, useParams } from 'react-router-dom'
 
 import './styles.scss'
 
-import listExams from '../../data/exams'
-
 import areaKids from '../../assets/images/area-kids.png'
+
+import { getExams } from '../../hooks/useExams'
 
 function AreaKids() {
   const { exam } = useParams();
-  const selectedExam = listExams.find(e => e.title === exam);
+  const [selectedExam, setSelectedExam] = useState(null);
+
+  getExams().then((res)=> {
+    Object.keys(res).forEach(id => {
+      if (res[id].title === exam) {
+        setSelectedExam(res[id]);
+      }
+    });
+
+    return;
+  });
 
   return (
     <div id="area-kids-page">

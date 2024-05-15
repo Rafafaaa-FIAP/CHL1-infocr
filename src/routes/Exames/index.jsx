@@ -6,7 +6,6 @@ import './styles.scss'
 import TextField from '../../components/TextField'
 import Exam from '../../components/Exam'
 
-//import listExams from '../../data/exams'
 import { getExams } from '../../hooks/useExams'
 
 function Exames() {
@@ -15,16 +14,15 @@ function Exames() {
 
   useEffect(() => {
     getExams().then((res)=> {
-      console.log(res);
-  
       const exams = [];
       Object.keys(res).forEach(id => {
         exams.push(res[id]);
       });
-      console.log(exams);
   
-      setListExams(exams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)));
-      setExamsFiltered(exams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0)));
+      const sortedExams = exams.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
+
+      setListExams(sortedExams);
+      setExamsFiltered(sortedExams);
   
       return;
     })

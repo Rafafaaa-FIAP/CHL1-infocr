@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue, get, set, off, push, child } from 'firebase/database';
+import { getDatabase, ref, get, query, push } from 'firebase/database';
+import { signInWithEmailAndPassword, signOut, getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBXfQ3GPnFzL7DhlHA5n6YxnxdjIHOTVmw",
@@ -13,5 +14,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const refExams = ref(database, 'exams/');
 
-export { database, ref, onValue, get, set, off, push, getDatabase, child }
+export { refExams, get, query, push, getAuth, signInWithEmailAndPassword, signOut }
