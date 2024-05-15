@@ -1,0 +1,30 @@
+div#alert {
+  background-color: var(--colors-1-base);
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  box-shadow: var(--box-shadow);
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: opacity var(--transition-time);
+
+  &.shown {
+    opacity: 1;
+  }
+
+  &.success {
+    background-color: var(--colors-semantic-success-base);
+    color: var(--colors-text-on-color);
+  }
+
+  &.error {
+    background-color: var(--colors-semantic-error-base);
+    color: var(--colors-text-on-color);
+  }
+}

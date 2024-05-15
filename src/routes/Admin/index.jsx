@@ -6,13 +6,14 @@ import './styles.scss';
 
 import TextField from '../../components/TextField';
 import ButtonDefault from '../../components/ButtonDefault';
+import Alert, { showAlert } from '../../components/Alert';
 
 function Admin() {
   const [isSigned, setIsSigned] = useState(checkIsSigned());
   const [loginData, setLoginData] = useState(null);
 
   useEffect(() => {
-    if (!checkIsSigned()) {
+    if (!isSigned) {
       setLoginData({ email: '', password: '' });
     }
   }, [isSigned]);
@@ -25,14 +26,39 @@ function Admin() {
   }
 
   function handleLogin() {
-    logIn(loginData.email, loginData.password).then((res) => {
-      if (res === null) {
+    const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
 
-      }
-      else {
+    let invalid = false;
+
+    if (email.checkValidity()) {
+      email.classList.remove('invalid');
+    }
+    else {
+      email.classList.add('invalid');
+      invalid = true;
+    }
+
+    if (password.checkValidity()) {
+      password.classList.remove('invalid');
+    }
+    else {
+      password.classList.add('invalid');
+      invalid = true;
+    }
+
+    if (!invalid){
+      logIn(loginData.email, loginData.password).then((res) => {
+        if (res === null) {
+          showAlert('Login inválido!', 'error');
+        }
+        
         setIsSigned(checkIsSigned());
-      }
-    });
+      });
+    }
+    else {
+      showAlert('Dados inválidos!', 'error');
+    }
   }
 
   function handlePost() {
@@ -52,9 +78,7 @@ function Admin() {
 
   return (
     <div id='admin-page' show-login={(!isSigned).toString()}>
-      {/* <button onClick={handleCheck}>check</button> */}
-      {/* <button onClick={handlePost}>teste post</button>
-      <button onClick={handleLogOut}>log out</button> */}
+      <Alert />
       {
         !isSigned ? (
           <div id='login-info'>
