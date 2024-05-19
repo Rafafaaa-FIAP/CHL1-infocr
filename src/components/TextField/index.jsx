@@ -12,6 +12,7 @@ function TextField(props) {
           placeholder={props.placeholder}
           style={{ width: props.width }}
           onChange={!!props.onChange ? props.onChange : (() => { })}
+          className={!!props.className ? props.className : ''}
         />
         <legend>
           <span>{props.placeholder}</span>

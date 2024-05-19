@@ -26,6 +26,24 @@ function Admin() {
     }
   }, [isSigned]);
 
+  useEffect(() => {
+    if (showModal) {
+      const id = examData.id;
+      document.querySelector('#exam-name').value = examData.title;
+      document.querySelector('#exam-about').value = examData.about;
+      document.querySelector('#exam-video').value = examData.videoLink;
+      examData.preparations.forEach((e, i) => {
+        document.querySelector(`#exam-prep-${i}`).value = e;
+      });
+      examData.cantDo.forEach((e, i) => {
+        document.querySelector(`#exam-cant-${i}`).value = e;
+      });
+      examData.ludicInfos.forEach((e, i) => {
+        document.querySelector(`#exam-ludic-${i}`).value = e;
+      });
+    }
+  }, [examData])
+
   function handleLoginData() {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
@@ -82,7 +100,7 @@ function Admin() {
     })
   }
 
-  function toggleExamModal(firstTime) {
+  function toggleExamModal() {
     setShowModal(!showModal);
 
     if (!showModal) {
@@ -94,9 +112,9 @@ function Admin() {
     return {
       id: "",
       about: "",
-      cantDo: ["",""],
-      ludicInfos: ["",""],
-      preparations: ["",""],
+      cantDo: [""],
+      ludicInfos: [""],
+      preparations: [""],
       title: "",
       videoLink: ""
     };
@@ -106,11 +124,39 @@ function Admin() {
     const obj = examData;
     obj[type].push("");
     setExamData(obj);
-    console.log(obj);
+  }
+
+  function removeField(type, index) {
+    const obj = examData;
+    if (obj[type].length === 1) {
+      showAlert('Não é possível remover todos os campos!', 'error');
+    }
+    else {
+      console.log(index);
+      obj[type].splice(index, 1);
+      setExamData(obj);
+    }
   }
 
   function handleExamData() {
+    const id = examData.id;
+    const title = document.querySelector('#exam-name').value;
+    const about = document.querySelector('#exam-about').value;
+    const videoLink = document.querySelector('#exam-video').value;
+    const preparations = [];
+    document.querySelectorAll('.exam-prep').forEach((e) => {
+      preparations.push(e.value);
+    });
+    const cantDo = [];
+    document.querySelectorAll('.exam-cant').forEach((e) => {
+      cantDo.push(e.value);
+    });
+    const ludicInfos = [];
+    document.querySelectorAll('.exam-ludic').forEach((e) => {
+      ludicInfos.push(e.value);
+    });
 
+    setExamData({ id, about, cantDo, ludicInfos, preparations, title, videoLink });
   }
 
 
@@ -176,12 +222,12 @@ function Admin() {
                   }
                 </tbody>
               </table>
-              <ButtonDefault text="Novo Exame" onClick={toggleExamModal} />
+              <ButtonDefault text="Novo Exame" onClick={() => {toggleExamModal()}} />
               <div id="exam-modal" className={showModal ? 'display-flex' : 'display-none'}>
                 <div className="modal">
                   <div className="modal-header">
                     <h2>Novo Exame</h2>
-                    <button className="modal-close-button" title="Fechar" onClick={toggleExamModal}>
+                    <button className="modal-close-button" title="Fechar" onClick={() => {toggleExamModal()}}>
                       <i className="bi bi-x-circle-fill"></i>
                     </button>
                   </div>
@@ -194,7 +240,12 @@ function Admin() {
                         {
                           examData.preparations.map((e, i) => {
                             return (
-                              <TextField id={`exam-prep-${i}`} placeholder={`Preparativo ${i+1}`} onChange={handleExamData} key={i}></TextField>
+                              <div className='field-with-remove' key={i}>
+                                <TextField id={`exam-prep-${i}`} className="exam-prep" placeholder={`Preparativo ${i+1}`} onChange={handleExamData}></TextField>
+                                <button className='button-remove-field' onClick={() => {removeField('preparations', i)}}>
+                                  <i className="bi bi-trash3-fill"></i>
+                                </button>
+                              </div>
                             )
                           })
                         }
@@ -206,7 +257,12 @@ function Admin() {
                       {
                         examData.cantDo.map((e, i) => {
                           return (
-                            <TextField id={`exam-cant-${i}`} placeholder={`O que não fazer ${i+1}`} onChange={handleExamData} key={i}></TextField>
+                            <div className='field-with-remove' key={i}>
+                              <TextField id={`exam-cant-${i}`} className="exam-cant" placeholder={`O que não fazer ${i+1}`} onChange={handleExamData}></TextField>
+                              <button className='button-remove-field' onClick={() => {removeField('cantDo', i)}}>
+                                <i className="bi bi-trash3-fill"></i>
+                              </button>
+                            </div>
                           )
                         })
                       }
@@ -218,7 +274,12 @@ function Admin() {
                       {
                         examData.ludicInfos.map((e, i) => {
                           return (
-                            <TextField id={`exam-cant-${i}`} placeholder={`Informação Lúdica ${i+1}`} onChange={handleExamData} key={i}></TextField>
+                            <div className='field-with-remove' key={i}>
+                              <TextField id={`exam-ludic-${i}`} className="exam-ludic" placeholder={`Informação Lúdica ${i+1}`} onChange={handleExamData}></TextField>
+                              <button className='button-remove-field' onClick={() => {removeField('ludicInfos', i)}}>
+                                <i className="bi bi-trash3-fill"></i>
+                              </button>
+                            </div>
                           )
                         })
                       }

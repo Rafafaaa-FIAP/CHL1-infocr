@@ -13,6 +13,7 @@ div#alert {
   font-size: 1.25rem;
   opacity: 0;
   transition: opacity var(--transition-time);
+  z-index: 999;
 
   &.shown {
     opacity: 1;
