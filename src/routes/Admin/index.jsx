@@ -19,7 +19,9 @@ function Admin() {
 
   const [examData, setExamData] = useState(returnEmptyExamData());
 
-  refreshExams()
+  useEffect(() => {
+    refreshExams();
+  }, []);
 
   useEffect(() => {
     if (!isSigned) {
@@ -98,6 +100,8 @@ function Admin() {
 
       setExamsList(exams);
     })
+
+    console.log('teste');
   }
 
   function toggleExamModal(examID) {
@@ -209,6 +213,7 @@ function Admin() {
         showAlert('Exame alterado!', 'success');
       }
 
+      refreshExams();
       toggleExamModal();
     }
     else {
@@ -229,6 +234,7 @@ function Admin() {
       if (result.isConfirmed) {
         removeExam(examID);
         showAlert('Exame removido!', 'success');
+        refreshExams();
       }
     });
   }
