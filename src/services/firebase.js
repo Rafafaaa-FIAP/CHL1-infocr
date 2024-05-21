@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get, query, push } from 'firebase/database';
+import { getDatabase, ref, query, child, get, push, set, remove } from 'firebase/database';
 import { signInWithEmailAndPassword, signOut, getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -16,4 +16,4 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const refExams = ref(database, 'exams/');
 
-export { refExams, get, query, push, getAuth, signInWithEmailAndPassword, signOut }
+export { refExams, query, child, get, push, set, remove, getAuth, signInWithEmailAndPassword, signOut }

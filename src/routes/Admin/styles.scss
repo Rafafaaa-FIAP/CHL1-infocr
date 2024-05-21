@@ -84,21 +84,31 @@ div#admin-page {
             align-items: center;
             gap: 1rem;
 
-            i {
-              cursor: pointer;
-              font-size: 1.2rem;
+            button {
+              background: none;
+              border: none;
               color: var(--colors-1-base);
               transition: all var(--transition-time);
 
+              i {
+                cursor: pointer;
+                font-size: 1.2rem;
+              }
+
               &:hover {
                 transform: scale(1.25);
-                color: var(--colors-1-dark);
               }
             }
           }
         }
       }
     }
+  }
+
+  div#general-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   div#exam-modal {

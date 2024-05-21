@@ -1,4 +1,4 @@
-import { refExams, get, query, push, getAuth, signInWithEmailAndPassword, signOut } from '../services/firebase';
+import { refExams, query, child, get, push, set, remove, getAuth, signInWithEmailAndPassword, signOut } from '../services/firebase';
 
 export function getExams() {
   return get(query(refExams)).then((snapshot) => {
@@ -13,27 +13,16 @@ export function getExams() {
   });
 }
 
-export function createExam() {
-  push(refExams, {
-    "about": "aaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "cantDo": [
-      "c",
-      "a",
-      "n"
-    ],
-    "ludicInfos": [
-      "l",
-      "u",
-      "d"
-    ],
-    "preparations": [
-      "p",
-      "r",
-      "e"
-    ],
-    "title": "teste",
-    "videoLink": "teste"
-  });
+export function addExam(examData) {
+  push(refExams, examData);
+}
+
+export function updateExam(examID, examData) {
+  set(child(refExams, examID), examData);
+}
+
+export function removeExam(examID) {
+  remove(child(refExams, examID));
 }
 
 export function checkIsSigned() {
