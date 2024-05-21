@@ -10,7 +10,7 @@ import ButtonDefault from '../../components/ButtonDefault';
 import Alert, { showAlert } from '../../components/Alert';
 
 function Admin() {
-  const [isSigned, setIsSigned] = useState(true /*checkIsSigned()*/);
+  const [isSigned, setIsSigned] = useState(checkIsSigned());
   const [loginData, setLoginData] = useState(null);
 
   const [examsList, setExamsList] = useState([]);
