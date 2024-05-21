@@ -100,8 +100,6 @@ function Admin() {
 
       setExamsList(exams);
     })
-
-    console.log('teste');
   }
 
   function toggleExamModal(examID) {
