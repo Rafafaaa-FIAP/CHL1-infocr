@@ -66,7 +66,7 @@ function AreaKids() {
                 </ul>
               </div>
               <iframe
-                src="https://www.youtube.com/embed/infocr"
+                src={selectedExam.videoLink}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 title="Vídeo YouTube"
                 allowFullScreen

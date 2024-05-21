@@ -10,7 +10,7 @@ import ButtonDefault from '../../components/ButtonDefault';
 import Alert, { showAlert } from '../../components/Alert';
 
 function Admin() {
-  const [isSigned, setIsSigned] = useState(checkIsSigned());
+  const [isSigned, setIsSigned] = useState(true /*checkIsSigned()*/);
   const [loginData, setLoginData] = useState(null);
 
   const [examsList, setExamsList] = useState([]);
@@ -363,9 +363,9 @@ function Admin() {
                 <div className="modal-footer">
                   {
                     !examData.id ? (
-                      <ButtonDefault id="create" text="Cadastrar" onClick={handleSendExam} />
+                      <ButtonDefault text="Adicionar" onClick={handleSendExam} />
                     ) : (
-                      <ButtonDefault id="update" text="Alterar" onClick={handleSendExam} />
+                      <ButtonDefault text="Alterar" onClick={handleSendExam} />
                     )
                   }
                 </div>
